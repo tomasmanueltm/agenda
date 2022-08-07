@@ -1,0 +1,434 @@
+@font-face
+{
+    font-family: "OpenRaleaway";
+    src: url("font/Raleway.ttf");
+}
+@font-face
+{
+    font-family: "OpenRoboto";
+    src: url("font/OpenRoboto.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 400;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: OpenRoboto;
+}
+
+// estrutura base da tag body
+body
+{
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.42;
+    overflow-y: auto;
+    overflow-x: hidden;    
+    font-style: normal;
+    background: #f1f1f1;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+// extrutura do ID #telaInteracao
+// servira de um suporte para nós
+
+
+#telaInteracao
+{
+    float: left;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+
+    // estrurados dos paineis que vamos trabalhar
+    .telaCadastro
+    {
+        z-index: 2;
+        width: 800px;
+        display: flex;
+        height: 500px;
+        padding: 0 20px;
+        overflow: hidden;
+        position: absolute;
+        background: #fff;
+        border-radius: 8px;
+        align-items: center;
+        flex-direction: row;
+        border: 1px solid #ccc;
+        justify-content: space-between;
+        animation-name: paginaCarregando;
+        animation-duration: 500ms;
+        
+
+        &::before
+        {
+            padding: 10px;
+            content: " ";
+            display: block;
+            position: absolute;
+        }
+        .legenda
+        {
+            width: 100%;
+            text-align: center;
+            animation-name: legendaCarregando;
+            animation-duration:0.9s;
+
+            h1
+            {
+                color: #777;
+                font-size: 30pt;
+                font-weight: 900;
+                letter-spacing: 4px;
+            }
+            span
+            {
+                display: block;
+                font-size: 12pt;
+                padding: 10px 0;
+                font-family: OpenRaleaway;
+            }
+        }
+        .linha
+        {
+            height: 75%;
+            margin: 0 25px;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        // estrutura do painel cadastramento
+        .form
+        {
+            display: block;
+            float: right;
+            width: 750px;
+            height: 380px;
+            background: 333;
+            animation-name: camposCarregando;
+            animation-duration: 1.5s;
+            animation-fill-mode: backwards;
+            
+            h5
+            {
+                display: block;
+                font-size: 14pt;
+                padding: 15px 0;
+                font-weight: 900;
+                text-align: center;
+
+            }
+            span
+            {
+                color: #777;
+                display: block;
+                padding: 20px 0 18px;
+
+                &.center
+                {
+
+                    display: block;
+                    text-align: center;
+                }
+            }
+            p
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                a
+                {
+                    width: 50%;
+                    color: #777;
+                    padding: 15px;
+                    transition: 280ms;
+                    margin: 0 5px 0 0;
+                    text-align: center;
+                    border-radius: 5px;
+                    border: 1px solid #777;
+
+                    &:last-child
+                    {
+                        margin: 0 0 0 15px;
+                    }
+                    &:hover
+                    {
+                        color: #fff;
+                        transition: 250ms;
+                        transform: scale(1);
+                        background: #777;
+                    }
+                }
+            }
+            div
+            {
+                width: 100%;
+                float: left;
+                display: grid;
+                margin: 0 0 10px;
+                grid-template-columns: .4fr 1fr;
+                grid-gap: 0 5px;
+
+                input,select
+                {
+                    color: #999;
+                    display: block;
+                    font-size: 12pt;
+                    padding: 12px 5px;
+                    border-radius: 5px;
+                    border: 1px solid #999;
+
+                    &:focus
+                    {
+                        color: #333;
+                        border-color: #999;
+                    }
+                }
+            }
+            button
+            {
+                color: #fff;
+                float: left;
+                width: 100%;
+                padding: 15px;
+                cursor: pointer;
+                font-weight: 900;
+                margin: 15px 0 25px;
+                border-radius: 3px;
+                letter-spacing: 2px;
+                background: #333;
+                border: 1px solid #999;
+                text-transform: uppercase;
+            }
+        }
+    }
+   
+
+    // estrura do painel de login
+    .telaLogin
+    {
+        z-index: 1;
+        width: 800px;
+        display: flex;
+        height: 500px;
+        padding: 0 20px;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 8px;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid #ccc;
+        justify-content: center;
+
+        animation-name: paginaCarregando;
+        animation-duration: 500ms;
+        
+
+        &::before
+        {
+            padding: 10px;
+            content: " ";
+            display: block;
+            position: absolute;
+        }
+        .legenda
+        {
+            width: 100%;
+            text-align: center;
+            animation-name: legendaCarregando;
+            animation-duration:0.9s;
+
+            h1
+            {
+                color: #777;
+                font-size: 30pt;
+                font-weight: 900;
+                letter-spacing: 4px;
+            }
+            span
+            {
+                color: #777;
+                display: block;
+                font-size: 12pt;
+                padding: 10px 0;
+                font-family: OpenRaleaway;
+            }
+        }
+        // estrutura do painel cadastramento
+        .form
+        {
+            width: 400px;
+            height: 280px;
+            margin: 0px 0 20px;
+            background: 333;
+            animation-name: camposCarregando;
+            animation-duration: 1.5s;
+            animation-fill-mode: backwards;
+            
+            h3
+            {
+                display: block;
+                font-size: 14pt;
+                font-weight: 900;
+                text-align: center;
+                padding: 5px 0 15px;
+
+            }
+            span
+            {
+                color: #777;
+                display: block;
+                text-align: center;
+                padding: 20px 0 18px;
+
+                a
+                {
+                    color: #333;
+                    font-weight: 900;
+                }
+            }
+            p
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                a
+                {
+                    width: 50%;
+                    color: #777;
+                    padding: 15px;
+                    transition: 280ms;
+                    margin: 0 5px 0 0;
+                    text-align: center;
+                    border-radius: 5px;
+                    border: 1px solid #777;
+
+                    &:last-child
+                    {
+                        margin: 0 0 0 15px;
+                    }
+                    &:hover
+                    {
+                        color: #fff;
+                        transition: 250ms;
+                        transform: scale(1);
+                        background: #777;
+                    }
+                }
+            }
+            input
+            {
+                width: 100%;
+                color: #999;
+                display: block;
+                font-size: 12pt;
+                margin: 15px 0;
+                padding: 15px 5px;
+                border-radius: 5px;
+                border: 1px solid #999;
+
+                &:focus
+                {
+                    color: #333;
+                    border-color: #999;
+                }
+            }
+            button
+            {
+                color: #fff;
+                float: left;
+                width: 100%;
+                padding: 15px;
+                cursor: pointer;
+                font-weight: 900;
+                margin: 15px 0 25px;
+                border-radius: 3px;
+                letter-spacing: 2px;
+                background: #333;
+                border: 1px solid #999;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+
+    .descer
+    {
+        animation: telaDescer 500ms;
+        animation-fill-mode: forwards;
+    }
+    .subir
+    {
+        animation: telaSubir 500ms;
+        animation-fill-mode: forwards;
+    }
+}
+
+
+
+@keyframes paginaCarregando
+{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes legendaCarregando
+{
+    from{
+        opacity: 0;
+        transform: translateX(-40%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes camposCarregando
+{
+    from{
+        opacity: 0;
+        transform: translateX(180%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes telaSubir 
+{
+    from{
+        
+        transform:  translateY(100vh);
+    }
+    to{
+        transform:  translateY(0);
+    }
+}
+@keyframes telaDescer
+{
+    from{
+        
+        transform:  translateY(0);
+    }
+    to{
+        transform:  translateY(100vh);
+    }
+}

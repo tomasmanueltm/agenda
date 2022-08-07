@@ -1,0 +1,522 @@
+@font-face {
+  font-family: "OpenRaleaway";
+  src: url("font/Raleway.ttf");
+}
+
+@font-face {
+  font-family: "OpenRoboto";
+  src: url("font/OpenRoboto.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 400;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: OpenRoboto;
+}
+
+body {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.42;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-style: normal;
+  background: #f1f1f1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+#telaInteracao {
+  float: left;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#telaInteracao .telaCadastro {
+  z-index: 2;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 500px;
+  padding: 0 20px;
+  overflow: hidden;
+  position: absolute;
+  background: #fff;
+  border-radius: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 1px solid #ccc;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-animation-name: paginaCarregando;
+          animation-name: paginaCarregando;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+}
+
+#telaInteracao .telaCadastro::before {
+  padding: 10px;
+  content: " ";
+  display: block;
+  position: absolute;
+}
+
+#telaInteracao .telaCadastro .legenda {
+  width: 100%;
+  text-align: center;
+  -webkit-animation-name: legendaCarregando;
+          animation-name: legendaCarregando;
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+}
+
+#telaInteracao .telaCadastro .legenda h1 {
+  color: #777;
+  font-size: 30pt;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+#telaInteracao .telaCadastro .legenda span {
+  display: block;
+  font-size: 12pt;
+  padding: 10px 0;
+  font-family: OpenRaleaway;
+}
+
+#telaInteracao .telaCadastro .linha {
+  height: 75%;
+  margin: 0 25px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#telaInteracao .telaCadastro .form {
+  display: block;
+  float: right;
+  width: 750px;
+  height: 380px;
+  background: 333;
+  -webkit-animation-name: camposCarregando;
+          animation-name: camposCarregando;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+#telaInteracao .telaCadastro .form h5 {
+  display: block;
+  font-size: 14pt;
+  padding: 15px 0;
+  font-weight: 900;
+  text-align: center;
+}
+
+#telaInteracao .telaCadastro .form span {
+  color: #777;
+  display: block;
+  padding: 20px 0 18px;
+}
+
+#telaInteracao .telaCadastro .form span.center {
+  display: block;
+  text-align: center;
+}
+
+#telaInteracao .telaCadastro .form p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#telaInteracao .telaCadastro .form p a {
+  width: 50%;
+  color: #777;
+  padding: 15px;
+  -webkit-transition: 280ms;
+  transition: 280ms;
+  margin: 0 5px 0 0;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #777;
+}
+
+#telaInteracao .telaCadastro .form p a:last-child {
+  margin: 0 0 0 15px;
+}
+
+#telaInteracao .telaCadastro .form p a:hover {
+  color: #fff;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background: #777;
+}
+
+#telaInteracao .telaCadastro .form div {
+  width: 100%;
+  float: left;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 0 10px;
+  -ms-grid-columns: .4fr 1fr;
+      grid-template-columns: .4fr 1fr;
+  grid-gap: 0 5px;
+}
+
+#telaInteracao .telaCadastro .form div input, #telaInteracao .telaCadastro .form div select {
+  color: #999;
+  display: block;
+  font-size: 12pt;
+  padding: 12px 5px;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+#telaInteracao .telaCadastro .form div input:focus, #telaInteracao .telaCadastro .form div select:focus {
+  color: #333;
+  border-color: #999;
+}
+
+#telaInteracao .telaCadastro .form button {
+  color: #fff;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: 900;
+  margin: 15px 0 25px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  background: #333;
+  border: 1px solid #999;
+  text-transform: uppercase;
+}
+
+#telaInteracao .telaLogin {
+  z-index: 1;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 500px;
+  padding: 0 20px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #ccc;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation-name: paginaCarregando;
+          animation-name: paginaCarregando;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+}
+
+#telaInteracao .telaLogin::before {
+  padding: 10px;
+  content: " ";
+  display: block;
+  position: absolute;
+}
+
+#telaInteracao .telaLogin .legenda {
+  width: 100%;
+  text-align: center;
+  -webkit-animation-name: legendaCarregando;
+          animation-name: legendaCarregando;
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+}
+
+#telaInteracao .telaLogin .legenda h1 {
+  color: #777;
+  font-size: 30pt;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+#telaInteracao .telaLogin .legenda span {
+  color: #777;
+  display: block;
+  font-size: 12pt;
+  padding: 10px 0;
+  font-family: OpenRaleaway;
+}
+
+#telaInteracao .telaLogin .form {
+  width: 400px;
+  height: 280px;
+  margin: 0px 0 20px;
+  background: 333;
+  -webkit-animation-name: camposCarregando;
+          animation-name: camposCarregando;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+#telaInteracao .telaLogin .form h3 {
+  display: block;
+  font-size: 14pt;
+  font-weight: 900;
+  text-align: center;
+  padding: 5px 0 15px;
+}
+
+#telaInteracao .telaLogin .form span {
+  color: #777;
+  display: block;
+  text-align: center;
+  padding: 20px 0 18px;
+}
+
+#telaInteracao .telaLogin .form span a {
+  color: #333;
+  font-weight: 900;
+}
+
+#telaInteracao .telaLogin .form p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#telaInteracao .telaLogin .form p a {
+  width: 50%;
+  color: #777;
+  padding: 15px;
+  -webkit-transition: 280ms;
+  transition: 280ms;
+  margin: 0 5px 0 0;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #777;
+}
+
+#telaInteracao .telaLogin .form p a:last-child {
+  margin: 0 0 0 15px;
+}
+
+#telaInteracao .telaLogin .form p a:hover {
+  color: #fff;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background: #777;
+}
+
+#telaInteracao .telaLogin .form input {
+  width: 100%;
+  color: #999;
+  display: block;
+  font-size: 12pt;
+  margin: 15px 0;
+  padding: 15px 5px;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+#telaInteracao .telaLogin .form input:focus {
+  color: #333;
+  border-color: #999;
+}
+
+#telaInteracao .telaLogin .form button {
+  color: #fff;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: 900;
+  margin: 15px 0 25px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  background: #333;
+  border: 1px solid #999;
+  text-transform: uppercase;
+}
+
+#telaInteracao .descer {
+  -webkit-animation: telaDescer 500ms;
+          animation: telaDescer 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+#telaInteracao .subir {
+  -webkit-animation: telaSubir 500ms;
+          animation: telaSubir 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes paginaCarregando {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes paginaCarregando {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes legendaCarregando {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes legendaCarregando {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes camposCarregando {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(180%);
+            transform: translateX(180%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes camposCarregando {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(180%);
+            transform: translateX(180%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes telaSubir {
+  from {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes telaSubir {
+  from {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes telaDescer {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+}
+
+@keyframes telaDescer {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+}
+/*# sourceMappingURL=design.css.map */
