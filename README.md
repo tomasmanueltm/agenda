@@ -1,7 +1,7 @@
 ## Sistema de agenda
 
 
-Criacao do front-end e back-end
+Criação do front-back-end
 
 Front-end (paineis)
     login,
